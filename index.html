@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriuk - Garingnya Juara, Asiknya Berasa!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Family Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kriukYellow: '#FFCC00',
+                        kriukYellowHover: '#E6B800',
+                        kriukBlack: '#18181B',
+                        kriukDark: '#09090B',
+                        kriukGray: '#F4F4F5'
+                    },
+                    fontFamily: {
+                        display: ['Fredoka', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFDF0;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Custom Wavy Backgrounds & Animations */
+        .bounce-gentle {
+            animation: bounceGentle 2s infinite alternate ease-in-out;
+        }
+        @keyframes bounceGentle {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .pop-on-hover {
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .pop-on-hover:hover {
+            transform: scale(1.05) rotate(-1deg);
+        }
+        /* Sound waves animation effect */
+        .crunch-wave {
+            box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+            animation: crunchPulse 1.5s infinite;
+        }
+        @keyframes crunchPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(255, 204, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+        }
+    </style>
+</head>
+<body class="text-kriukBlack antialiased overflow-x-hidden selection:bg-kriukYellow selection:text-kriukBlack">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b-4 border-kriukBlack px-4 py-3">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <!-- LOGO KRIUK SVG / BRAND -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- SVG Logo 'K' Minimalis Sesuai Desain Gambar -->
+                <div class="w-10 h-10 flex items-center justify-center bg-kriukBlack rounded-xl p-1 shadow-[3px_3px_0px_0px_#FFCC00]">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <!-- Black Bar -->
+                        <path d="M25,10 C35,10 35,90 25,90 C15,90 15,10 25,10 Z" fill="#FFFFFF"/>
+                        <!-- Yellow Curve -->
+                        <path d="M40,15 C75,20 75,45 50,50 C75,55 75,80 40,85 C55,70 55,30 40,15 Z" fill="#FFCC00"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-2xl tracking-wider text-kriukBlack leading-none">kriuk<span class="text-kriukYellow">.</span></span>
+                    <span class="text-[10px] font-bold text-gray-500 tracking-tight hidden sm:inline">GARINGNYA JUARA!</span>
+                </div>
+            </a>
+
+            <!-- NAV LINKS -->
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm">
+                <a href="#momen" class="hover:text-amber-600 transition">Pilih Momen</a>
+                <a href="#varian" class="hover:text-amber-600 transition">Varian Rasa</a>
+                <a href="#testi" class="hover:text-amber-600 transition">Kata Sobat Kriuk</a>
+            </div>
+
+            <!-- CTA HEADER -->
+            <a href="#pesan" class="bg-kriukYellow hover:bg-kriukYellowHover text-kriukBlack font-display font-bold px-4 py-2 rounded-full border-2 border-kriukBlack shadow-[3px_3px_0px_0px_#18181B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg">
+                </i> Order Now!
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-28 pb-16 px-4 relative overflow-hidden bg-gradient-to-b from-amber-50 via-amber-100/40 to-transparent">
+        <!-- Floating Decorative Badges -->
+        <div class="absolute top-24 left-5 sm:left-20 bg-kriukYellow border-2 border-kriukBlack px-3 py-1 rounded-full font-display font-bold text-xs sm:text-sm shadow-[2px_2px_0px_0px_#18181B] bounce-gentle z-10">
+            ✨ 100% Renyah Hakiki!
+        </div>
+        <div class="absolute top-36 right-5 sm:right-20 bg-white border-2 border-kriukBlack px-3 py-1 rounded-full font-display font-bold text-xs sm:text-sm shadow-[2px_2px_0px_0px_#18181B] bounce-gentle z-10" style="animation-delay: 1s;">
+            🔥 Bikin Nagih!
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-20">
+            <!-- Main Catchy Title -->
+            <span class="inline-block bg-kriukBlack text-kriukYellow font-display font-bold px-4 py-1.5 rounded-full text-sm mb-4 tracking-wide shadow-md">
+                🎉 WELCOME SOBAT KRIUK!
+            </span>
+            <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl text-kriukBlack leading-tight mb-6">
+                Camilan Pas Untuk <br class="hidden sm:inline"/>
+                <span class="bg-kriukYellow px-3 py-1 rounded-2xl border-4 border-kriukBlack inline-block shadow-[5px_5px_0px_0px_#18181B] my-1 rotate-[-1deg]">
+                    Setiap Momenmu ✨
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-xl font-medium text-gray-700 max-w-2xl mx-auto mb-8">
+                Slogan kita simpel: <strong class="text-kriukBlack bg-amber-200 px-2 py-0.5 rounded">"Garingnya Juara, Asiknya Berasa!"</strong>. Siap-siap ketagihan dari gigitan pertama! 🤤
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pesan" class="w-full sm:w-auto bg-kriukYellow hover:bg-kriukYellowHover text-kriukBlack font-display font-extrabold text-lg px-8 py-4 rounded-2xl border-3 border-kriukBlack shadow-[5px_5px_0px_0px_#18181B] pop-on-hover flex items-center justify-center gap-3 crunch-wave">
+                    <i class="fa-solid fa-basket-shopping text-xl"></i>
+                    Bungkus Kriuk Sekarang!
+                </a>
+                <a href="#momen" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-kriukBlack font-display font-bold text-base px-6 py-4 rounded-2xl border-2 border-kriukBlack shadow-[3px_3px_0px_0px_#18181B] pop-on-hover flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i>
+                    Cek Mood Kamu
+                </a>
+            </div>
+
+            <!-- Social Proof Banner -->
+            <div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-gray-600">
+                <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-xl border border-gray-200">
+                    <span class="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
+                    <span>4.9/5 dari 2,000+ Sobat Kriuk</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-xl border border-gray-200">
+                    <i class="fa-solid fa-truck-fast text-kriukBlack"></i>
+                    <span>Kirim Pengiriman Seluruh Indonesia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FITUR INTERAKTIF 'PILIH MOMEN KAMU' -->
+    <section id="momen" class="py-16 px-4 bg-white border-y-4 border-kriukBlack">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-kriukBlack mb-3">
+                    🎯 Sensasi Kriuk Bar: <span class="text-amber-500">Pilih Momen Kamu!</span>
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base font-medium">
+                    Klik tombol suasana hati kamu sekarang, dan lihat kombinasi makan Kriuk yang paling mantap!
+                </p>
+            </div>
+
+            <!-- Mood Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+                <button onclick="setMoment('nonton')" id="btn-nonton" class="moment-btn active-btn p-4 rounded-2xl border-3 border-kriukBlack bg-kriukYellow text-kriukBlack font-display font-bold text-sm sm:text-base shadow-[4px_4px_0px_0px_#18181B] transition flex flex-col items-center gap-2">
+                    <span class="text-3xl">🎬</span>
+                    <span>Lagi Nonton Film</span>
+                </button>
+                <button onclick="setMoment('nugas')" id="btn-nugas" class="moment-btn p-4 rounded-2xl border-3 border-kriukBlack bg-white hover:bg-amber-50 text-kriukBlack font-display font-bold text-sm sm:text-base shadow-[4px_4px_0px_0px_#18181B] transition flex flex-col items-center gap-2">
+                    <span class="text-3xl">💻</span>
+                    <span>Lagi Nugas / Kerja</span>
+                </button>
+                <button onclick="setMoment('nongkrong')" id="btn-nongkrong" class="moment-btn p-4 rounded-2xl border-3 border-kriukBlack bg-white hover:bg-amber-50 text-kriukBlack font-display font-bold text-sm sm:text-base shadow-[4px_4px_0px_0px_#18181B] transition flex flex-col items-center gap-2">
+                    <span class="text-3xl">🛵</span>
+                    <span>Nongkrong Bareng</span>
+                </button>
+                <button onclick="setMoment('galau')" id="btn-galau" class="moment-btn p-4 rounded-2xl border-3 border-kriukBlack bg-white hover:bg-amber-50 text-kriukBlack font-display font-bold text-sm sm:text-base shadow-[4px_4px_0px_0px_#18181B] transition flex flex-col items-center gap-2">
+                    <span class="text-3xl">🌧️</span>
+                    <span>Butuh Mood Booster</span>
+                </button>
+            </div>
+
+            <!-- Dynamic Recommendation Box -->
+            <div id="recommendation-card" class="bg-amber-50 border-3 border-kriukBlack p-6 sm:p-8 rounded-3xl shadow-[6px_6px_0px_0px_#18181B] flex flex-col sm:flex-row items-center gap-6 transition-all duration-300">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 bg-kriukYellow rounded-2xl border-2 border-kriukBlack flex items-center justify-center text-5xl shrink-0 shadow-inner" id="rec-icon">
+                    🍿
+                </div>
+                <div class="text-center sm:text-left space-y-2">
+                    <span id="rec-badge" class="bg-kriukBlack text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Rekomendasi Terbaik
+                    </span>
+                    <h3 id="rec-title" class="font-display font-bold text-2xl text-kriukBlack">
+                        Kriuk Original + Es Teh Manis
+                    </h3>
+                    <p id="rec-desc" class="text-gray-700 text-sm sm:text-base">
+                        Renyahnya Kriuk bakal mengalihkan perhatianmu dari adegan jumpscare atau drama yang lagi seru-serunya! Bikin makin betah maraton film.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#pesan" class="inline-flex items-center gap-2 font-display font-bold text-xs bg-kriukBlack text-kriukYellow px-4 py-2 rounded-xl hover:bg-gray-800 transition">
+                            Pesan Varian Ini <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <section id="varian" class="py-16 px-4 bg-amber-50/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="bg-amber-200 text-kriukBlack font-display font-bold px-4 py-1 rounded-full text-xs uppercase tracking-wider">
+                    Pilihan Rasa Favorit
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-kriukBlack mt-2">
+                    Pilih Varian Kriuk-mu! 🍿
+                </h2>
+                <p class="text-gray-600 font-medium text-sm sm:text-base mt-2">
+                    Dibuat dari bahan pilihan, bumbu melimpah, dan kerenyahan nomor 1.
+                </p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- CARD 1 -->
+                <div class="bg-white rounded-3xl border-3 border-kriukBlack p-5 shadow-[6px_6px_0px_0px_#18181B] pop-on-hover flex flex-col justify-between relative">
+                    <span class="absolute top-3 right-3 bg-red-500 text-white font-display text-xs font-bold px-3 py-1 rounded-full uppercase border border-kriukBlack">
+                        BEST SELLER
+                    </span>
+                    <div>
+                        <!-- Mockup Image Graphic -->
+                        <div class="w-full h-48 bg-amber-100 rounded-2xl border-2 border-kriukBlack flex items-center justify-center mb-5 relative overflow-hidden group">
+                            <span class="text-7xl group-hover:scale-110 transition">🍟</span>
+                            <div class="absolute bottom-2 left-2 bg-kriukBlack/80 text-white text-[10px] px-2 py-0.5 rounded font-mono">Porsi Pas</div>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-kriukBlack mb-1">Original Gurih</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4">
+                            Rasa klasik bumbu gurih rempah pilihan. Sekali coba, susah berhenti mengunyah!
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs text-gray-500 font-bold">Harga per bungkus</span>
+                            <span class="font-display font-extrabold text-2xl text-kriukBlack">Rp 2.500</span>
+                        </div>
+                        <button onclick="quickOrder('Original Gurih')" class="w-full bg-kriukYellow hover:bg-kriukYellowHover text-kriukBlack font-display font-bold py-3 rounded-xl border-2 border-kriukBlack shadow-[2px_2px_0px_0px_#18181B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-plus"></i> Tambah Ke Pesanan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-white rounded-3xl border-3 border-kriukBlack p-5 shadow-[6px_6px_0px_0px_#18181B] pop-on-hover flex flex-col justify-between relative">
+                    <span class="absolute top-3 right-3 bg-amber-400 text-kriukBlack font-display text-xs font-bold px-3 py-1 rounded-full uppercase border border-kriukBlack">
+                        FAVORIT PEDAS
+                    </span>
+                    <div>
+                        <div class="w-full h-48 bg-red-100 rounded-2xl border-2 border-kriukBlack flex items-center justify-center mb-5 relative overflow-hidden group">
+                            <span class="text-7xl group-hover:scale-110 transition">🌶️</span>
+                            <div class="absolute bottom-2 left-2 bg-kriukBlack/80 text-white text-[10px] px-2 py-0.5 rounded font-mono">Porsi Pas</div>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-kriukBlack mb-1">Pedas Daun Jeruk</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4">
+                            Pedas gurih dengan aroma daun jeruk yang wangi. Pedasnya nendang banget!
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs text-gray-500 font-bold">Harga per bungkus</span>
+                            <span class="font-display font-extrabold text-2xl text-kriukBlack">Rp 2.500</span>
+                        </div>
+                        <button onclick="quickOrder('Pedas Daun Jeruk')" class="w-full bg-kriukYellow hover:bg-kriukYellowHover text-kriukBlack font-display font-bold py-3 rounded-xl border-2 border-kriukBlack shadow-[2px_2px_0px_0px_#18181B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-plus"></i> Tambah Ke Pesanan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-white rounded-3xl border-3 border-kriukBlack p-5 shadow-[6px_6px_0px_0px_#18181B] pop-on-hover flex flex-col justify-between relative">
+                    <span class="absolute top-3 right-3 bg-purple-600 text-white font-display text-xs font-bold px-3 py-1 rounded-full uppercase border border-kriukBlack">
+                        ⭐ SPESIAL
+                    </span>
+                    <div>
+                        <div class="w-full h-48 bg-orange-100 rounded-2xl border-2 border-kriukBlack flex items-center justify-center mb-5 relative overflow-hidden group">
+                            <span class="text-7xl group-hover:scale-110 transition">🧀</span>
+                            <div class="absolute bottom-2 left-2 bg-kriukBlack/80 text-white text-[10px] px-2 py-0.5 rounded font-mono">Porsi Pas</div>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-kriukBlack mb-1">Spesial Keju Lumer</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4">
+                            Varian spesial dengan bumbu keju tebal & creamy melimpah. Bikin nagih berlipat!
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs text-purple-700 font-bold">Harga Varian Spesial</span>
+                            <span class="font-display font-extrabold text-2xl text-purple-700">Rp 3.000</span>
+                        </div>
+                        <button onclick="quickOrder('Spesial Keju Lumer')" class="w-full bg-kriukYellow hover:bg-kriukYellowHover text-kriukBlack font-display font-bold py-3 rounded-xl border-2 border-kriukBlack shadow-[2px_2px_0px_0px_#18181B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-plus"></i> Tambah Ke Pesanan
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL / SOBAT KRIUK SECTION -->
+    <section id="testi" class="py-16 px-4 bg-white border-y-4 border-kriukBlack">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-kriukBlack">
+                    💬 Apa Kata <span class="bg-kriukYellow px-3 py-1 rounded-xl border-2 border-kriukBlack shadow-[3px_3px_0px_0px_#18181B]">Sobat Kriuk?</span>
+                </h2>
+                <p class="text-gray-600 font-medium text-sm sm:text-base mt-3">
+                    Ulasan jujur dari mereka yang udah ketagihan garingnya Kriuk!
+                </p>
+            </div>
+
+            <!-- Social Card Testimonials Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                
+                <!-- TESTI 1 -->
+                <div class="bg-amber-50 p-5 rounded-2xl border-2 border-kriukBlack shadow-[4px_4px_0px_0px_#18181B]">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-kriukYellow border border-kriukBlack flex items-center justify-center font-bold text-xs">
+                                ND
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs">@nanda_pratama</h4>
+                                <p class="text-[10px] text-gray-500">via Instagram Story</p>
+                            </div>
+                        </div>
+                        <span class="text-yellow-500 text-xs">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-xs text-gray-800 leading-relaxed font-medium">
+                        "Sumpah kriuknya beneran nyaring banget! Beli 3 bungkus buat nemenin nugas, eh habis dalam sejam 😭👍 Parah sih nagihnya."
+                    </p>
+                </div>
+
+                <!-- TESTI 2 -->
+                <div class="bg-amber-50 p-5 rounded-2xl border-2 border-kriukBlack shadow-[4px_4px_0px_0px_#18181B]">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-pink-300 border border-kriukBlack flex items-center justify-center font-bold text-xs">
+                                CR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs">@clarissa_r</h4>
+                                <p class="text-[10px] text-gray-500">via TikTok Review</p>
+                            </div>
+                        </div>
+                        <span class="text-yellow-500 text-xs">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-xs text-gray-800 leading-relaxed font-medium">
+                        "Varian Pedas Afdol fix juara umum! Pedesnya pas, terus ga pelit bumbu. Kirimnya cepet banget lagi ke rumah."
+                    </p>
+                </div>
+
+                <!-- TESTI 3 -->
+                <div class="bg-amber-50 p-5 rounded-2xl border-2 border-kriukBlack shadow-[4px_4px_0px_0px_#18181B]">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-green-300 border border-kriukBlack flex items-center justify-center font-bold text-xs">
+                                BG
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs">@bagas_gaming</h4>
+                                <p class="text-[10px] text-gray-500">via WhatsApp</p>
+                            </div>
+                        </div>
+                        <span class="text-yellow-500 text-xs">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-xs text-gray-800 leading-relaxed font-medium">
+                        "Camilan pas banget buat main game semalaman. Tangan ga gitu belepotan tapi rasanya tetep gurih mantap!"
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KANBAN / SIMULASI FORM PESANAN KHUSUS (LANGSUNG KE WHATSAPP) -->
+    <section id="pesan" class="py-16 px-4 bg-gradient-to-t from-amber-100 to-transparent">
+        <div class="max-w-2xl mx-auto bg-white p-6 sm:p-10 rounded-3xl border-4 border-kriukBlack shadow-[8px_8px_0px_0px_#18181B]">
+            <div class="text-center mb-6">
+                <span class="bg-kriukYellow text-kriukBlack font-display font-bold px-3 py-1 rounded-full text-xs">
+                    FORM ORDER CEPAT
+                </span>
+                <h2 class="font-display font-extrabold text-3xl text-kriukBlack mt-2">
+                    Siap Mengkriuk Hari Ini? 🛒
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-600 mt-1">
+                    Isi pilihanmu di bawah & klik kirim. Pesanan langsung terhubung ke WhatsApp admin!
+                </p>
+            </div>
+
+            <form id="orderForm" onsubmit="sendWhatsApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-kriukBlack uppercase mb-1">Nama Kamu / Sobat Kriuk</label>
+                    <input type="text" id="custName" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl border-2 border-kriukBlack focus:outline-none focus:ring-2 focus:ring-kriukYellow text-sm font-medium">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-kriukBlack uppercase mb-1">Pilih Varian Favorit</label>
+                    <select id="custVariant" onchange="calculateTotal()" class="w-full px-4 py-3 rounded-xl border-2 border-kriukBlack focus:outline-none focus:ring-2 focus:ring-kriukYellow text-sm font-medium bg-white">
+                        <option value="Original Gurih" data-price="2500">Original Gurih (Rp 2.500)</option>
+                        <option value="Pedas Daun Jeruk" data-price="2500">Pedas Daun Jeruk (Rp 2.500)</option>
+                        <option value="Balado Extra" data-price="2500">Balado Extra (Rp 2.500)</option>
+                        <option value="Spesial Keju Lumer" data-price="3000">⭐ Spesial Keju Lumer (Rp 3.000)</option>
+                        <option value="Spesial Rumput Laut" data-price="3000">⭐ Spesial Rumput Laut (Rp 3.000)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-kriukBlack uppercase mb-1">Jumlah (Bungkus)</label>
+                    <input type="number" id="custQty" min="1" value="4" oninput="calculateTotal()" required class="w-full px-4 py-3 rounded-xl border-2 border-kriukBlack focus:outline-none focus:ring-2 focus:ring-kriukYellow text-sm font-medium">
+                </div>
+
+                <!-- Estimasi Total -->
+                <div class="bg-amber-50 p-4 rounded-xl border-2 border-kriukBlack flex items-center justify-between">
+                    <span class="font-display font-bold text-sm text-kriukBlack">Estimasi Total Pembayaran:</span>
+                    <span id="totalDisplay" class="font-display font-extrabold text-xl text-kriukBlack">Rp 10.000</span>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-kriukBlack uppercase mb-1">Alamat / Catatan Pengiriman</label>
+                    <textarea id="custNotes" rows="2" placeholder="Contoh: Kirim ke Jakarta Selatan (Mohon bumbu pedas dipisah)" class="w-full px-4 py-3 rounded-xl border-2 border-kriukBlack focus:outline-none focus:ring-2 focus:ring-kriukYellow text-sm font-medium"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-display font-extrabold text-lg py-4 rounded-xl border-3 border-kriukBlack shadow-[4px_4px_0px_0px_#18181B] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Kirim Orderan via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER & IG INTEGRATION -->
+    <footer class="bg-kriukBlack text-white py-12 px-4 border-t-4 border-kriukYellow">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            
+            <!-- Brand Info -->
+            <div class="space-y-3 max-w-sm">
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-8 h-8 flex items-center justify-center bg-kriukYellow rounded-lg p-1">
+                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                            <path d="M25,10 C35,10 35,90 25,90 C15,90 15,10 25,10 Z" fill="#18181B"/>
+                            <path d="M40,15 C75,20 75,45 50,50 C75,55 75,80 40,85 C55,70 55,30 40,15 Z" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white">kriuk<span class="text-kriukYellow">.</span></span>
+                </div>
+                <p class="text-xs text-gray-400">
+                    Camilan pas untuk setiap momenmu ✨ <br/>
+                    Garingnya Juara, Asiknya Berasa!
+                </p>
+            </div>
+
+            <!-- IG Bio Snapshot -->
+            <div class="bg-zinc-900 border border-zinc-700 p-4 rounded-2xl max-w-xs text-left text-xs space-y-2">
+                <div class="flex items-center gap-2">
+                    <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
+                    <span class="font-bold text-amber-400">@sobatkriuk.id</span>
+                </div>
+                <p class="text-gray-300 text-[11px] leading-tight">
+                    Camilan pas untuk setiap momenmu ✨<br/>
+                    🏆 Garingnya Juara, Asiknya Berasa!<br/>
+                    📦 Siap kirim se-Indonesia
+                </p>
+                <a href="https://instagram.com" target="_blank" class="inline-block text-[10px] text-kriukYellow underline font-semibold">
+                    👇 Sobat Kriuk, pesan di sini yuk
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex flex-col items-center md:items-end gap-3">
+                <span class="text-xs font-bold text-gray-400 uppercase">Ikuti Keseruan Kami</span>
+                <div class="flex gap-3">
+                    <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-kriukYellow hover:text-kriukBlack border border-zinc-700 flex items-center justify-center transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-kriukYellow hover:text-kriukBlack border border-zinc-700 flex items-center justify-center transition">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-kriukYellow hover:text-kriukBlack border border-zinc-700 flex items-center justify-center transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-2">© 2026 Kriuk Indonesia. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Data Rekomendasi Momen
+        const momentData = {
+            nonton: {
+                icon: "🍿",
+                title: "Kriuk Original (Rp 2.500) + Es Teh",
+                desc: "Renyahnya Kriuk bakal bikin maraton film / drakor kamu makin asik tanpa henti. Bebas bunyi keripik pas lagi adegan seru!"
+            },
+            nugas: {
+                icon: "🔥",
+                title: "Kriuk Pedas Daun Jeruk (Rp 2.500)",
+                desc: "Rasa pedasnya langsung bikin melek! Solusi paling ampuh mengusir kantuk pas kejar deadline nugas atau kerjaan."
+            },
+            nongkrong: {
+                icon: "🥳",
+                title: "Campur Reguler & Spesial (Rp 2.500 - Rp 3.000)",
+                desc: "Biar semua kebagian rasa favoritnya! Ada yang suka gurih, pedas daun jeruk, sampai varian spesial keju lumer."
+            },
+            galau: {
+                icon: "🧀",
+                title: "Spesial Keju Lumer (Rp 3.000)",
+                desc: "Bumbu keju tebal melimpah siap balikin mood kamu yang lagi turun. Garansi bikin tersenyum lagi dalam hitungan detik!"
+            }
+        };
+
+        // Function untuk hitung estimasi total otomatis
+        function calculateTotal() {
+            const select = document.getElementById('custVariant');
+            const selectedOption = select.options[select.selectedIndex];
+            const price = parseInt(selectedOption.getAttribute('data-price') || 2500);
+            const qty = parseInt(document.getElementById('custQty').value) || 0;
+            const total = price * qty;
+            
+            document.getElementById('totalDisplay').innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        // Initialize calculation on page load
+        document.addEventListener('DOMContentLoaded', calculateTotal);
+
+        // Function untuk ubah tab rekomendasi momen
+        function setMoment(key) {
+            // Update Active Buttons styling
+            const buttons = document.querySelectorAll('.moment-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-kriukYellow');
+                btn.classList.add('bg-white');
+            });
+
+            const activeBtn = document.getElementById(`btn-${key}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white');
+                activeBtn.classList.add('bg-kriukYellow');
+            }
+
+            // Update content with smooth transition effect
+            const card = document.getElementById('recommendation-card');
+            card.style.opacity = '0.4';
+            
+            setTimeout(() => {
+                document.getElementById('rec-icon').innerText = momentData[key].icon;
+                document.getElementById('rec-title').innerText = momentData[key].title;
+                document.getElementById('rec-desc').innerText = momentData[key].desc;
+                card.style.opacity = '1';
+            }, 150);
+        }
+
+        // Quick Order dari Tombol Produk
+        function quickOrder(variantName) {
+            const select = document.getElementById('custVariant');
+            select.value = variantName;
+            calculateTotal();
+            document.getElementById('pesan').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Kirim Orderan ke WhatsApp
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('custName').value;
+            const select = document.getElementById('custVariant');
+            const variant = select.value;
+            const price = parseInt(select.options[select.selectedIndex].getAttribute('data-price'));
+            const qty = document.getElementById('custQty').value;
+            const total = (price * parseInt(qty)).toLocaleString('id-ID');
+            const notes = document.getElementById('custNotes').value;
+
+            // Nomor HP Tujuan WhatsApp Asli Pemilik
+            const phoneNumber = "6288987503670";
+
+            const message = `Halo Admin Kriuk! 👋%0A%0ASaya mau pesan camilan Kriuk nih:%0A- *Nama:* ${encodeURIComponent(name)}%0A- *Varian:* ${encodeURIComponent(variant)} (Rp ${price.toLocaleString('id-ID')}/pcs)%0A- *Jumlah:* ${qty} bungkus%0A- *Total Harga:* Rp ${total}%0A- *Catatan/Alamat:* ${encodeURIComponent(notes)}%0A%0ATolong diproses ya min, makasih! ✨`;
+
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
